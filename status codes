@@ -1,0 +1,24 @@
+1xx - Informational
+100 - continue
+102 - processing
+
+
+2xx - Success
+200 - ok
+201 - Created
+202 - Accepted
+
+
+3xx - redirection
+302 - not found
+301 - moved perminently
+
+
+4xx - client error
+400 - Bad request
+401 - Unauthorized
+404 - not found
+
+
+5xx - server error
+500 - internal server error
