@@ -1,3 +1,4 @@
 {
-  "jwtSecret": "kamehameha"
+  "jwtSecret": "kamehameha",
+  "mongoURI": "mongodb+srv://annrika40:annrika40@manga-enthusiast-0spwj.mongodb.net/<dbname>?retryWrites=true&w=majority"
 }

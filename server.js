@@ -1,8 +1,14 @@
 //Bring in express
 const express = require("express");
 
+//bring in connectDB
+const connectDB = require("./config/db");
+
 //Create an instance of express
 const app = express();
+
+//connec to the database
+connectDB();
 
 //middleware to allow us to use raw data
 app.use(express.json({ extended: false }));
