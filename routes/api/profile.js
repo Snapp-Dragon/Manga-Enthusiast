@@ -7,8 +7,8 @@ const request = require("request");
 const config = require("config");
 const { check, validationResult } = require("express-validator");
 
-//@ Route api/profile/me
-//@ Desc get current users profile
+//@ Route - Get api/profile/me
+//@ Desc  - get current users profile
 //@ Access Privale
 router.get("/me", auth, async (req, res) => {
   try {
