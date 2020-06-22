@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -8,18 +10,19 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import store from "./store";
 import { Provider } from "react-redux";
 
-// import "./App.css";
+import "./App.css";
 
 const App = () => {
-  // //initializes materialize javascript
-  // useEffect(() => {
-  //   M.AutoInit();
-  // });
+  //initializes materialize javascript
+  useEffect(() => {
+    M.AutoInit();
+  });
 
   return (
     <Provider store={store}>
       <Fragment>
-        <h3>App</h3>
+        <Navbar />
+        <Landing />
       </Fragment>
     </Provider>
   );

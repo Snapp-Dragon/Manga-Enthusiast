@@ -1,0 +1,87 @@
+ul li a {
+  margin: 0 2rem;
+}
+
+.material-icons {
+  font-size: 48px;
+}
+/* Landing Styling */
+
+.landing {
+  background: no-repeat center/cover url("../src//img/landing.jpg");
+  height: 100vh;
+  position: relative;
+  color: white;
+  background-color: black;
+}
+
+.landing .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* i {
+  color: coral;
+  font-size: 2rem;
+} */
+
+body {
+  background: black;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.landing * {
+  z-index: 9;
+}
+
+ul li a:hover {
+  background: coral;
+}
+nav {
+  border-bottom: 2px solid coral;
+  opacity: 0.8;
+}
+
+.btn {
+  margin-bottom: 1rem;
+}
+
+/* Utility classes */
+
+.landing-btn i {
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.text-primary {
+  color: coral;
+}
+
+.text-secondary {
+  color: red;
+}
+
+.xs-1 {
+  margin: 1rem 0;
+}
+.xs-2 {
+  margin-bottom: 2rem;
+}
+.xs-3 {
+  margin: 3rem 0;
+}
