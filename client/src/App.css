@@ -28,9 +28,10 @@ ul li a {
   font-size: 2rem;
 } */
 
-body {
+/* body {
   background: black;
-}
+  color: white;
+} */
 
 .landing::before {
   content: "";
@@ -54,18 +55,38 @@ nav {
   opacity: 0.8;
 }
 
-.btn {
-  margin-bottom: 1rem;
-}
-
-/* Utility classes */
-
 .landing-btn i {
   color: white;
 }
 
 .btn:hover {
   opacity: 0.8;
+}
+
+/* Forms */
+/* label focus color */
+.input-field input:focus + label {
+  color: coral !important;
+}
+
+.material-icons:focus {
+  color: coral;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px coral !important;
+  box-shadow: 0 1px 0 0 coral !important;
+}
+/* Utility classes */
+
+.btn-dark {
+  background: transparent;
+  border: 1px solid white;
+}
+
+.btn-dark:hover {
+  opacity: 0.8;
+  background: transparent;
 }
 
 .text-primary {
@@ -76,12 +97,12 @@ nav {
   color: red;
 }
 
-.xs-1 {
+.my-1 {
   margin: 1rem 0;
 }
-.xs-2 {
+.my-2 {
   margin-bottom: 2rem;
 }
-.xs-3 {
+.my-3 {
   margin: 3rem 0;
 }

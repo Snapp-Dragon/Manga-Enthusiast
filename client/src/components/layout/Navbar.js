@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,44 +7,46 @@ const Navbar = () => {
       <nav className="grey darken-4">
         <div className="container">
           <div className="nav-wrapper">
-            <a href="!#" className="brand-logo">
-              <i class="large material-icons">tv</i>
+            <Link to="/" className="brand-logo">
+              <i className="large material-icons">tv</i>
               <span className="text-primary">Anime</span> Enthusiasts
-            </a>
+            </Link>
 
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <a
-                  href="!#"
-                  class="tooltipped"
+                <Link
+                  to="/login"
+                  className="tooltipped"
                   data-position="bottom"
                   data-tooltip="Log in to your account"
                 >
-                  <i class="material-icons left landing-btn">login</i>
+                  <i className="material-icons left landing-btn">login</i>
                   Login
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="!#"
-                  class="tooltipped"
+                <Link
+                  to="/register"
+                  className="tooltipped"
                   data-position="bottom"
                   data-tooltip="Create an account"
                 >
-                  <i class="material-icons left landing-btn">keyboard_hide</i>
+                  <i className="material-icons left landing-btn">
+                    keyboard_hide
+                  </i>
                   Register
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="!#"
-                  class="tooltipped"
+                <Link
+                  to="/enthusiasts"
+                  className="tooltipped"
                   data-position="bottom"
                   data-tooltip="Meet Manga Lovers"
                 >
-                  <i class="material-icons left landing-btn">people</i>
+                  <i className="material-icons left landing-btn">people</i>
                   Enthusiasts
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

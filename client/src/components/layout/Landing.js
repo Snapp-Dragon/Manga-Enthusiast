@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -7,18 +8,17 @@ const Landing = () => {
         <h1>
           <span className="text-primary">Welcome</span> To Anime Enthusiats
         </h1>
-        <p className="xs-2">Discover and discuss your favorite anime</p>
-        <a class=" orange darken-2 waves-effect waves-light btn">
-          <i class="material-icons left">keyboard_hide</i>Register
-        </a>
+        <p className="my-2">Discover and discuss your favorite anime</p>
+        <Link
+          to="/register"
+          class="my-2 orange darken-2 waves-effect waves-light btn"
+        >
+          <i class="material-icons left landing-btn">keyboard_hide</i>Register
+        </Link>
 
-        <a class=" orange darken-2 waves-effect waves-light btn">
-          <i class="material-icons left">login</i>Login
-        </a>
-        {/* <a href="!#" className=" orange darken-2 waves-effect waves-light btn">
-          <i class="material-icons">login</i>
-          Login
-        </a> */}
+        <Link to="/login" class=" btn-dark waves-effect waves-light btn">
+          <i class="material-icons left landing-btn">login</i>Login
+        </Link>
       </div>
     </section>
   );
