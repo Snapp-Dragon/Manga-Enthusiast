@@ -16,7 +16,7 @@ const Landing = () => {
           <i class="material-icons left landing-btn">keyboard_hide</i>Register
         </Link>
 
-        <Link to="/login" class=" btn-dark waves-effect waves-light btn">
+        <Link to="/login" class="btn-dark waves-effect waves-light btn">
           <i class="material-icons left landing-btn">login</i>Login
         </Link>
       </div>

@@ -28,10 +28,10 @@ ul li a {
   font-size: 2rem;
 } */
 
-/* body {
+body {
   background: black;
   color: white;
-} */
+}
 
 .landing::before {
   content: "";
@@ -65,10 +65,24 @@ nav {
 
 /* Forms */
 /* label focus color */
+
+.input-field .prefix.active {
+  color: coral;
+}
+
 .input-field input:focus + label {
   color: coral !important;
 }
 
+.input-field [type="text"] {
+  color: white;
+}
+.input-field [type="email"] {
+  color: white;
+}
+.input-field [type="password"] {
+  color: white;
+}
 .material-icons:focus {
   color: coral;
 }
@@ -101,8 +115,17 @@ nav {
   margin: 1rem 0;
 }
 .my-2 {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 .my-3 {
   margin: 3rem 0;
+}
+.mx-1 {
+  margin: 0 1rem;
+}
+.mx-2 {
+  margin-bottom: 0 2rem;
+}
+.mx-3 {
+  margin: 0 3rem;
 }

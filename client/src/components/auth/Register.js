@@ -32,6 +32,7 @@ const Register = () => {
               <i className="material-icons prefix">account_circle</i>
               <input
                 id="name"
+                name="name"
                 type="text"
                 className="validate"
                 value={name}
@@ -46,6 +47,7 @@ const Register = () => {
               <i className="material-icons prefix">email</i>
               <input
                 id="email"
+                name="email"
                 type="email"
                 className="validate"
                 value={email}
@@ -60,6 +62,7 @@ const Register = () => {
               <input
                 id="password"
                 type="password"
+                name="password"
                 className="validate"
                 value={password}
                 onChange={(e) => onChange(e)}
@@ -73,6 +76,7 @@ const Register = () => {
               <input
                 id="password2"
                 type="password"
+                name="password2"
                 className="validate"
                 value={password2}
                 onChange={(e) => onChange(e)}
@@ -80,9 +84,9 @@ const Register = () => {
               <label htmlFor="password2">Re-enter Password</label>
             </div>
           </div>
-          {/* <a className="btn-dark my-1 waves-effect waves-light btn">
+          <a className="btn-dark my-1 waves-effect waves-light btn">
             <i className="material-icons left">keyboard_hide</i>Register
-          </a> */}
+          </a>
 
           <p>
             Already Have an account?{" "}
