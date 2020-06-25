@@ -15,6 +15,16 @@ ul li a {
   background-color: black;
 }
 
+.log-reg {
+  background: no-repeat center/cover url("../src/img/register.jpg");
+  height: 100%;
+}
+
+.log-log {
+  background: no-repeat center/cover url("../src/img/light.png");
+  height: 100%;
+}
+
 .landing .content {
   display: flex;
   flex-direction: column;

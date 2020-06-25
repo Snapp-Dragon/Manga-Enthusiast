@@ -14,8 +14,19 @@ const Register = () => {
   // change the state
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    if (password !== password2) {
+      console.error("The passwords do not match");
+    } else {
+      console.log("success");
+    }
+  };
+
   return (
-    <div>
+    <div className="log-log">
       <div>
         <h4>
           <span className="text-primary">Join</span> The Community
@@ -26,7 +37,7 @@ const Register = () => {
         </p>
       </div>
       <div className="row">
-        <form className="col s12">
+        <form className="col s6">
           <div className="row">
             <div className="input-field col s12">
               <i className="material-icons prefix">account_circle</i>
@@ -37,8 +48,14 @@ const Register = () => {
                 className="validate"
                 value={name}
                 onChange={(e) => onChange(e)}
+                required
               />
               <label htmlFor="name">Name</label>
+              <span
+                className="helper-text"
+                data-error="Please enter your name"
+                data-success="success"
+              ></span>
             </div>
           </div>
 
@@ -51,9 +68,15 @@ const Register = () => {
                 type="email"
                 className="validate"
                 value={email}
+                required
                 onChange={(e) => onChange(e)}
               />
               <label htmlFor="email">Email</label>
+              <span
+                className="helper-text"
+                data-error="Please enter valid email"
+                data-success="success"
+              ></span>
             </div>
           </div>
           <div className="row">
@@ -65,9 +88,16 @@ const Register = () => {
                 name="password"
                 className="validate"
                 value={password}
+                minLength="7"
+                required
                 onChange={(e) => onChange(e)}
               />
               <label htmlFor="password">Password</label>
+              <span
+                className="helper-text"
+                data-error="password must be 6 characters long"
+                data-success="success"
+              ></span>
             </div>
           </div>
           <div className="row">
@@ -78,13 +108,25 @@ const Register = () => {
                 type="password"
                 name="password2"
                 className="validate"
+                required
                 value={password2}
+                re
                 onChange={(e) => onChange(e)}
+                minLength="7"
               />
               <label htmlFor="password2">Re-enter Password</label>
+              <span
+                className="helper-text"
+                data-error="password must be 6 characters long"
+                data-success="success"
+              ></span>
             </div>
           </div>
-          <a className="btn-dark my-1 waves-effect waves-light btn">
+          <a
+            href="!#"
+            className="btn-dark my-1 waves-effect waves-light btn"
+            onClick={(e) => onSubmit(e)}
+          >
             <i className="material-icons left">keyboard_hide</i>Register
           </a>
 
