@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../actions/authActions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import M from "materialize-css/dist/js/materialize.min.js";
 
-const Register = () => {
+const Register = ({ registerUser }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,9 +23,18 @@ const Register = () => {
     e.preventDefault();
 
     if (password !== password2) {
-      console.error("The passwords do not match");
+      M.toast({ html: "Your passwords do not match", classes: "red" });
+      // console.error("The passwords do not match");
     } else {
-      console.log("success");
+      //build user object
+      const user = {
+        name,
+        email,
+        password,
+      };
+
+      //call register user
+      registerUser(user);
     }
   };
 
@@ -110,7 +123,6 @@ const Register = () => {
                 className="validate"
                 required
                 value={password2}
-                re
                 onChange={(e) => onChange(e)}
                 minLength="7"
               />
@@ -142,4 +154,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+};
+
+export default connect(null, { registerUser })(Register);
