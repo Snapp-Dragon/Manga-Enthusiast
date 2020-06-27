@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { login } from "../../actions/authActions";
+import PropTypes from "prop-types";
 
-const Login = () => {
+const Login = ({ login }) => {
   //state for login
 
   const [formData, setFormData] = useState({
@@ -16,6 +19,9 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    const credentials = { email, password };
+    login(credentials);
   };
   return (
     <div className="log-reg">
@@ -77,7 +83,7 @@ const Login = () => {
             className="btn-dark my-1 waves-effect waves-light btn"
             onClick={(e) => onSubmit(e)}
           >
-            <i className="material-icons left">keyboard_hide</i>Register
+            <i className="material-icons left">keyboard_hide</i>Login
           </a>
 
           <p>
@@ -92,4 +98,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+};
+
+export default connect(null, { login })(Login);
