@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
 
   // 2. check to see if there is a token in the req header
   if (!token) {
-    res.status(401).json({ msg: "No Token, Authorization Denied" });
+    return res.status(401).json({ msg: "No Token, Authorization Denied" });
   }
 
   // 3. If there is token verify that it is valid
