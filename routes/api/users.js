@@ -33,7 +33,7 @@ router.post(
 
     if (!errors.isEmpty()) {
       //display the array of errors
-      res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ errors: errors.array() });
     }
 
     // Destructure name, email ,password from the request object
