@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { registerUser } from "../../actions/authActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const Register = ({ registerUser }) => {
+const Register = ({ registerUser, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,6 +37,10 @@ const Register = ({ registerUser }) => {
       registerUser(user);
     }
   };
+  //if user is logged in redirect the user to dashoard
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <div className="log-log">
@@ -158,4 +162,8 @@ Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { registerUser })(Register);
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.authReducer.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { registerUser })(Register);
