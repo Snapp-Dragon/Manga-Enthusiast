@@ -139,3 +139,37 @@ nav {
 .mx-3 {
   margin: 0 3rem;
 }
+
+.material-icons {
+  color: coral;
+}
+
+/* side navigation custom style */
+.sidenav li > a {
+  color: white;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px coral solid;
+}
+
+.sidenav {
+  border: 1px coral solid;
+}
+
+/* Media Querries */
+@media (max-width: 1200px) {
+  .small {
+    display: none;
+  }
+
+  .landing .content h1 {
+    padding: 0 3rem;
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing .content h1 {
+    font-size: 2rem;
+  }
+}
