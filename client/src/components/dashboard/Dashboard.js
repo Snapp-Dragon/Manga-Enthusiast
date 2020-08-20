@@ -2,15 +2,22 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
+import Spinner from "../layout/Spinner";
 
-const Dashboard = ({ getCurrentProfile, auth, profile }) => {
+const Dashboard = ({
+  getCurrentProfile,
+  auth,
+  profile: { profile, loading },
+}) => {
   useEffect(() => {
-    getCurrentProfile();
+    setTimeout(() => {
+      getCurrentProfile();
+    }, 50000);
   }, [getCurrentProfile]);
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <>Your profile goes here</>
   );
 };
 
