@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Dashboard from "../src/components/dashboard/Dashboard";
+import CreateProfile from "../src/components/profile-form/CreateProfile";
 import PrivateRoute from "../src/components/routing/PrivateRoute";
 
 import "materialize-css/dist/css/materialize.min.css";
@@ -39,6 +40,11 @@ const App = () => {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute
+                exact
+                path="/create-profile"
+                component={CreateProfile}
+              />
             </Switch>
           </section>
         </Fragment>
