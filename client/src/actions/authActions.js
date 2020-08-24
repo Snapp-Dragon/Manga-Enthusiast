@@ -9,6 +9,7 @@ import {
   USER_LOADED,
   AUTH_FAIL,
   LOGOUT,
+  CLEAR_PROFILE,
 } from "../actions/types";
 import M from "materialize-css/dist/js/materialize.min.js";
 
@@ -96,6 +97,7 @@ export const login = ({ email, password }) => async (dispatch) => {
 //@ Action - log out a user / clear profile
 
 export const logout = () => async (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
   M.toast({ html: "Logged out", classes: "green" });
 };
