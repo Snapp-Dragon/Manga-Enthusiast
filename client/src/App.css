@@ -24,6 +24,10 @@ ul li a {
   background: no-repeat center/cover url("../src/img/light.png");
   height: 100%;
 }
+.log-profile {
+  background: no-repeat center/cover url("../src/img/kenpachi.jpg");
+  height: 100%;
+}
 
 .landing .content {
   display: flex;
@@ -79,7 +83,7 @@ nav {
 .input-field .prefix.active {
   color: coral;
 }
-
+/* change color of label when it is selected to coral */
 .input-field input:focus + label {
   color: coral !important;
 }
@@ -93,9 +97,14 @@ nav {
 .input-field [type="password"] {
   color: white;
 }
-.material-icons:focus {
-  color: coral;
+.text-area [type="text"] {
+  color: white;
 }
+
+.materialize-textarea {
+  color: white;
+}
+
 /* label underline focus color */
 .row .input-field input:focus {
   border-bottom: 1px coral !important;
@@ -142,6 +151,10 @@ nav {
 
 .material-icons {
   color: coral;
+}
+
+.lead {
+  font-size: 1.5rem;
 }
 
 /* side navigation custom style */
