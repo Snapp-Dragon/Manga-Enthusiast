@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
@@ -6,18 +7,41 @@ import Spinner from "../layout/Spinner";
 
 const Dashboard = ({
   getCurrentProfile,
-  auth,
+  auth: { user },
   profile: { profile, loading },
 }) => {
   useEffect(() => {
-    setTimeout(() => {
-      getCurrentProfile();
-    }, 50000);
+    getCurrentProfile();
   }, [getCurrentProfile]);
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <>Your profile goes here</>
+    <Fragment>
+      <h1>
+        <span className="text-primary">Dash</span>board
+      </h1>
+      <p className="lead">
+        <i className="small material-icons">person</i> Welcome{" "}
+        {user && user.name}
+      </p>
+      {/* Check to see if the user has a profile */}
+      {profile !== null ? (
+        <Fragment> user has a profle</Fragment>
+      ) : (
+        <Fragment>
+          {" "}
+          <p className="lead">
+            Oops, it looks like you havent created a profle yet!
+          </p>
+          <Link
+            to="/create-profile"
+            className="btn-dark waves-effect waves-light btn"
+          >
+            Create Profile
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
