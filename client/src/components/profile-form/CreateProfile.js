@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { createProfile } from "../../actions/profileActions";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+//withRouter allows us to redirect from an action
+import { Link, withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
-const CreateProfile = () => {
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     bio: "",
     hobbies: "",
@@ -18,6 +20,7 @@ const CreateProfile = () => {
 
   const {
     bio,
+    hobbies,
     mangas,
     location,
     youtube,
@@ -32,7 +35,10 @@ const CreateProfile = () => {
 
   //Submit the form
 
-  const onSubmit = () => {};
+  const onSubmit = (e) => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
 
   return (
     <div className="log-profile">
@@ -47,6 +53,28 @@ const CreateProfile = () => {
       </div>
       <div className="row">
         <form className="col s6">
+          <div className="row">
+            <div className="input-field col s12">
+              <i className="material-icons prefix">language</i>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                className="validate"
+                value={location}
+                required
+                onChange={(e) => onChange(e)}
+              />
+              <label htmlFor="location">City, State, Country</label>
+              <span
+                className="helper-text"
+                data-error="Please enter your location"
+                data-success="success"
+              ></span>
+            </div>
+          </div>
+
+          {/* Mangas */}
           <div className="row">
             <div className="input-field col s12">
               <i className="material-icons prefix">library_books</i>
@@ -68,22 +96,23 @@ const CreateProfile = () => {
             </div>
           </div>
 
+          {/* Hobbies */}
           <div className="row">
             <div className="input-field col s12">
-              <i className="material-icons prefix">language</i>
+              <i className="material-icons prefix">library_books</i>
               <input
-                id="location"
-                name="location"
+                id="hobbies"
+                name="hobbies"
                 type="text"
                 className="validate"
-                value={location}
-                required
+                value={hobbies}
                 onChange={(e) => onChange(e)}
+                required
               />
-              <label htmlFor="location">City, State, Country</label>
+              <label htmlFor="mangas">Any Hobbies</label>
               <span
                 className="helper-text"
-                data-error="Please enter your location"
+                data-error="Please enter mangas you have read"
                 data-success="success"
               ></span>
             </div>
@@ -187,6 +216,8 @@ const CreateProfile = () => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+};
 
-export default CreateProfile;
+export default connect(null, { createProfile })(withRouter(CreateProfile));
