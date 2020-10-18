@@ -6,6 +6,7 @@ import Dashboard from "../src/components/dashboard/Dashboard";
 import EditProfile from "../src/components/profile-form/EditProfile";
 import CreateProfile from "../src/components/profile-form/CreateProfile";
 import PrivateRoute from "../src/components/routing/PrivateRoute";
+import Profiles from "./components/profiles/Profiles";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -40,6 +41,7 @@ const App = () => {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/profiles" component ={Profiles}/>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute
                 exact
