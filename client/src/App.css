@@ -112,6 +112,17 @@ nav {
 }
 /* Utility classes */
 
+.btn-primary {
+  background: coral;
+}
+.btn-primary:hover {
+  background: coral;
+}
+
+.btn-primary i {
+  color: black;
+  font-size: 1.5rem;
+}
 .btn-dark {
   background: transparent;
   border: 1px solid white;
