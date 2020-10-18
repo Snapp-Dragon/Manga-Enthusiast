@@ -4,6 +4,7 @@ import {
   CLEAR_PROFILE,
   PROFILE_ERROR,
 } from "../actions/types";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 //STATE
 const initialState = {
@@ -23,6 +24,13 @@ export default function (state = initialState, action) {
         profile: payload,
         loading: false,
       };
+
+    case GET_PROFILES:
+      return{
+        ...state,
+        profiles: payload,
+        loading: false,
+      }
 
     case PROFILE_ERROR:
       return {
