@@ -30,7 +30,7 @@ router.get("/me", auth, async (req, res) => {
 });
 
 //@ Route Post api/profile
-//@ Desc create pr update user profile
+//@ Desc create or update user profile
 //@ Access Prive
 
 router.post(
