@@ -8,6 +8,20 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   //create variabes that will store links visible to the guests and members
   const authLinks = (
     <ul id="nav-mobile" className="right hide-on-med-and-down">
+
+
+
+     <li>
+        <Link
+          to="/profiles"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+          <i className="material-icons left landing-btn">account_box</i>
+          Members
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard"
@@ -37,6 +51,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <ul id="nav-mobile" className="right hide-on-med-and-down">
+   <li>
+        <Link
+          to="/profiles"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+          <i className="material-icons left landing-btn">account_box</i>
+          Members
+        </Link>
+      </li>
+
       <li>
         <Link
           to="/login"
@@ -75,6 +101,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const mobileGuest = (
     <ul className="sidenav black" id="mobile-demo">
+
+<li>
+        <Link
+          to="/profiles"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+          <i className="material-icons left landing-btn">account_box</i>
+          Members
+        </Link>
+      </li>
       <li>
         <Link
           to="/login"
@@ -115,6 +153,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const mobileAuth = (
     <ul className="sidenav black text-white" id="mobile-demo">
+
+<li>
+        <Link
+          to="/profiles"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+          <i className="material-icons left landing-btn">account_box</i>
+          Members
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard"
