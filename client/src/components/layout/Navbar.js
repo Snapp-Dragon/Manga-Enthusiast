@@ -74,7 +74,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   const mobileGuest = (
-    <ul class="sidenav black" id="mobile-demo">
+    <ul className="sidenav black" id="mobile-demo">
       <li>
         <Link
           to="/login"
@@ -114,7 +114,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   const mobileAuth = (
-    <ul class="sidenav black text-white" id="mobile-demo">
+    <ul className="sidenav black text-white" id="mobile-demo">
       <li>
         <Link
           to="/dashboard"
@@ -148,8 +148,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <div className="container">
             <div className="nav-wrapper">
               <Link to="/" className="brand-logo">
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                  <i class="material-icons">menu</i>
+                <a
+                  href="#"
+                  data-target="mobile-demo"
+                  className="sidenav-trigger"
+                >
+                  <i className="material-icons">menu</i>
                 </a>
                 <i className="large material-icons">tv</i>
                 <span className="text-primary">Anime</span>{" "}
