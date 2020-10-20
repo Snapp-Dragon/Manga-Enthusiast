@@ -141,9 +141,9 @@ router.get("/", async (req, res) => {
 
 // @Route Get api/profile/user/:user_id
 // @Desc get profile by user id
-// @Access Private
+// @Access Public
 
-router.get("/user/:user_id", auth, async (req, res) => {
+router.get("/user/:user_id",  async (req, res) => {
   try {
     //find profiles and populate with the user name and avatar
     const profile = await Profile.findOne({
@@ -151,16 +151,19 @@ router.get("/user/:user_id", auth, async (req, res) => {
     }).populate("user", ["name", "avatar"]);
 
     if (!profile) {
-      return res.status(404).json({ msg: "User Not Found" });
+      return res.status(401).json({ msg: "User Not Found" });
     }
 
     res.json(profile);
+    
   } catch (error) {
+
+    console.error(error.message); 
     if (error.kind == "ObjectId") {
-      return res.status(400).json({ msg: "There is no profile for this user" });
+    res.status(400).json({ msg: "There is no profile for this user" });
     }
 
-    res.status(500).send("profile not found");
+    return res.status(500).send("profile not found");
   }
 });
 
