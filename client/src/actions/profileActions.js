@@ -51,7 +51,7 @@ export const getProfiles = ()=> async dispatch =>{
       type: PROFILE_ERROR,
       payload: {
 
-        msg: error.resonse.statusText,
+        msg: error.response.statusText,
         status: error.reponse.status
       }
     })
@@ -82,8 +82,8 @@ export const getProfileById = userId => async dispatch =>{
       type: PROFILE_ERROR,
       payload: {
 
-        msg: error.resonse.statusText,
-        status: error.reponse.status
+        msg: error.response.statusText,
+        status: error.response.status
       }
     })
     
