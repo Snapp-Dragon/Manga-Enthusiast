@@ -18,7 +18,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           data-position="bottom"
           data-tooltip="View Memebers"
         >
-          <i className="material-icons left landing-btn">account_box</i>
+           <i className="material-icons left landing-btn">people</i>
           Members
         </Link>
       </li>
@@ -58,7 +58,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           data-position="bottom"
           data-tooltip="View Memebers"
         >
-          <i className="material-icons left landing-btn">account_box</i>
+            <i className="material-icons left landing-btn">people</i>
           Members
         </Link>
       </li>
@@ -85,17 +85,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Register
         </Link>
       </li>
-      <li>
-        <Link
-          to="/enthusiasts"
-          className="tooltipped"
-          data-position="bottom"
-          data-tooltip="Meet Manga Lovers"
-        >
-          <i className="material-icons left landing-btn">people</i>
-          Enthusiasts
-        </Link>
-      </li>
+     
     </ul>
   );
 
@@ -109,7 +99,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           data-position="bottom"
           data-tooltip="View Memebers"
         >
-          <i className="material-icons left landing-btn">account_box</i>
+           <i className="material-icons left landing-btn">people</i>
           Members
         </Link>
       </li>
@@ -137,17 +127,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Register
         </Link>
       </li>
-      <li>
-        <Link
-          to="/enthusiasts"
-          className="tooltipped"
-          data-position="bottom"
-          data-tooltip="Meet Manga Lovers"
-        >
-          <i className=" white-text material-icons left landing-btn">people</i>
-          Enthusiasts
-        </Link>
-      </li>
+      
     </ul>
   );
 
@@ -161,7 +141,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           data-position="bottom"
           data-tooltip="View Memebers"
         >
-          <i className="material-icons left landing-btn">account_box</i>
+            <i className="material-icons left landing-btn">people</i>
           Members
         </Link>
       </li>
