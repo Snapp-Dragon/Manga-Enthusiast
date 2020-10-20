@@ -62,12 +62,12 @@ export const getProfiles = ()=> async dispatch =>{
 
 //@Action get user profile by userId
 
-export const getProfileById = userId => dispatch =>{
+export const getProfileById = userId => async dispatch =>{
 
   try {
 
  
-    const res = axios.get(`/api/profile/user/${userId}`);
+    const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
 
@@ -77,19 +77,17 @@ export const getProfileById = userId => dispatch =>{
     
   } catch (error) {
 
+  
     dispatch({
       type: PROFILE_ERROR,
-      payload:{
-        
-        msg: error.response.statusText,
-        status: error.response.staus
-      }
+      payload: {
 
+        msg: error.resonse.statusText,
+        status: error.reponse.status
+      }
     })
     
   }
-
-
 }
 
 //@Action create or update profile
