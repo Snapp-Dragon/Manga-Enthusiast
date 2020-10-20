@@ -112,6 +112,13 @@ nav {
 }
 /* Utility classes */
 
+.btn{
+
+  padding: .5 1rem;
+  border-radius:5px;
+  margin:0;
+}
+
 .btn-primary {
   background: coral;
 }
@@ -178,6 +185,48 @@ nav {
 
 .sidenav {
   border: 1px coral solid;
+}
+
+/* Profile item styling */
+
+.flex-structure{
+
+  display: flex;
+  height: 200px;
+  padding: 0 4rem 0 4rem;
+  border-radius: 5rem;
+  border: 2px solid coral;
+  justify-content:space-between;
+  align-items: center;
+  margin: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.inner-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex:1;
+  max-width: 200px;
+}
+
+.round-img{
+
+  border-radius:50%;
+  width: 75px;
+  height:75px;
+}
+
+.profile-image{
+
+  text-align: center;
+}
+
+.profile-description{
+
+  max-width:300px;
+  text-align:center;
 }
 
 /* Media Querries */
