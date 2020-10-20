@@ -15,11 +15,11 @@ const Landing = ({ isAuthenticated }) => {
         </h1>
         <p className="my-2">Discover and discuss your favorite anime</p>
         <Link to="/register" class="my-2 btn-dark waves-effect waves-light btn">
-          <i class="material-icons left landing-btn">keyboard_hide</i>Register
+          <i className="material-icons left landing-btn">keyboard_hide</i>Register
         </Link>
 
         <Link to="/login" class="btn-dark waves-effect waves-light btn">
-          <i class="material-icons left landing-btn">login</i>Login
+          <i className="material-icons left landing-btn">login</i>Login
         </Link>
       </div>
     </section>
