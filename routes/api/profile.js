@@ -160,10 +160,10 @@ router.get("/user/:user_id",  async (req, res) => {
 
     console.error(error.message); 
     if (error.kind == "ObjectId") {
-    res.status(400).json({ msg: "There is no profile for this user" });
+   return res.status(400).json({ msg: "There is no profile for this user" });
     }
 
-    return res.status(500).send("profile not found");
+     res.status(500).send("profile not found");
   }
 });
 
