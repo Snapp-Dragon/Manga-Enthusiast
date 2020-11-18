@@ -22,6 +22,17 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Members
         </Link>
       </li>
+     <li>
+        <Link
+          to="/posts"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+           <i className="material-icons left landing-btn">people</i>
+          Posts
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard"
@@ -101,6 +112,17 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         >
            <i className="material-icons left landing-btn">people</i>
           Members
+        </Link>
+      </li>
+<li>
+        <Link
+          to="/posts"
+          className="tooltipped"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+           <i className="material-icons left landing-btn">people</i>
+          Posts
         </Link>
       </li>
       <li>
