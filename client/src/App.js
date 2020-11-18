@@ -8,6 +8,7 @@ import CreateProfile from "../src/components/profile-form/CreateProfile";
 import PrivateRoute from "../src/components/routing/PrivateRoute";
 import Profiles from "./components/profiles/Profiles";
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -40,6 +41,8 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <section className="container">
             <Switch>
+
+              {/* Add these components to the main app component. This makes them visible */}
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profiles" component ={Profiles}/>
@@ -54,6 +57,11 @@ const App = () => {
                 exact
                 path="/edit-profile"
                 component={EditProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/posts"
+                component={Posts}
               />
             </Switch>
           </section>
