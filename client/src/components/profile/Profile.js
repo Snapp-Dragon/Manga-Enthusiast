@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner';
 import {Link} from 'react-router-dom';
 import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
+
 import {getProfileById} from '../../actions/profileActions';
 
 
@@ -37,6 +39,9 @@ const Profile = ({auth, getProfileById,match, profile:{loading, profile}})=>{
 
              <div>
                 <ProfileTop profile ={profile}/>
+               
+                <ProfileAbout profile ={profile}/>
+               
             </div> 
             
               
