@@ -153,6 +153,12 @@ nav {
   color: red;
 }
 
+.post-image{
+
+  text-align: center;
+}
+
+/* margin */
 .my-1 {
   margin: 1rem 0;
 }
@@ -172,6 +178,56 @@ nav {
   margin: 0 3rem;
 }
 
+/* padding */
+
+.px-1{
+
+  padding: 0 1rem
+}
+.px-2{
+
+  padding: 0 2rem
+}
+.px-3{
+
+  padding: 0 3rem
+}
+.py-1{
+
+  padding: 1rem 1rem;
+}
+.py-2{
+
+  padding: 2rem 0
+}
+.py-3{
+
+  padding: 3rem 0
+}
+
+/* bg colors*/
+
+.bg-white{
+
+  background: white;
+}
+
+.bg-almond{
+
+  background: blanchedalmond;
+}
+
+.bg-coral{
+
+  background: coral;
+}
+
+.bg-red{
+
+  background: red;
+}
+
+
 .material-icons {
   color: coral;
 }
@@ -180,6 +236,18 @@ nav {
   font-size: 1.5rem;
 }
 
+.line {
+  height: 2px;
+
+  background: coral;
+  margin:2rem 8rem ;
+}
+.line-hobbies {
+  height: 2px;
+  margin-top:4rem;
+  background: coral;
+  margin:2rem 16rem ;
+}
 /* side navigation custom style */
 .sidenav li > a {
   color: white;
@@ -190,6 +258,16 @@ nav {
 
 .sidenav {
   border: 1px coral solid;
+}
+
+/* post styling */
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  border-radius: 4px;
+  align-items: center;
 }
 
 /* Profile item styling */
@@ -212,8 +290,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex:1;
   max-width: 200px;
+}
+
+.manga-list{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex:1;
 }
 
 .round-img{
@@ -237,15 +322,22 @@ nav {
 .public-profile{
 
   text-align: center;
-  border:1px solid coral;
+  border:3px solid coral;
+  border-radius: 5px;
   margin-top: 1rem;
 }
 
-.profile-description{
+.public-profile h2{
 
+  margin-top:0;
+  padding-bottom:1rem;
+}
+
+.profile-description{
   max-width:300px;
   text-align:center;
 }
+
 
 
 /* Media Querries */
