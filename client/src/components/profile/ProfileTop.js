@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
+
 
 const ProfileTop = ({profile: { 
     bio,
@@ -11,34 +11,34 @@ const ProfileTop = ({profile: {
     user: {name, avatar}
 } }) => {
     return (
-        <div class="public-profile">
+        <div className="public-profile">
         <img
-          class="round-img-profile my-2"
+          className="round-img-profile my-2"
           src={avatar}
           alt=""
         />
 
-    <h1 class="large">{name}</h1>
+    <h1 className="large">{name}</h1>
         <p class="lead">Developer at Microsoft</p>
     <p>{location}</p>
-        <div class="icons my-1">
+        <div className="icons my-1">
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-globe fa-2x mx-1 text-primary"></i>
+            <i className="fas fa-globe fa-2x mx-1 text-primary"></i>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-twitter fa-2x mx-1 text-primary"></i>
+            <i className="fab fa-twitter fa-2x mx-1 text-primary"></i>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-facebook fa-2x mx-1 text-primary"></i>
+            <i className="fab fa-facebook fa-2x mx-1 text-primary"></i>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin fa-2x mx-1 text-primary"></i>
+            <i className="fab fa-linkedin fa-2x mx-1 text-primary"></i>
           </a>
-           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-youtube fa-2x mx-1 text-primary"></i>
+           <a href="http://www.youtube.com/chadfarrington" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-youtube fa-2x mx-1 text-primary"></i>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram fa-2x mx-1 text-primary"></i>
+            <i className="fab fa-instagram fa-2x mx-1 text-primary"></i>
           </a>
         </div>
       </div>
@@ -52,10 +52,10 @@ ProfileTop.propTypes = {
 
 }
 
-const mapStateToProps = (state)=>({
+// const mapStateToProps = (state)=>({
 
-    profile: state.profileReducer,
+//     profile: state.profileReducer,
   
-})
+// })
 
 export default ProfileTop
