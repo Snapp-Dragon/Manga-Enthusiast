@@ -4,6 +4,7 @@ import {getPosts} from '../../actions/postActions';
 import PostItem from '../posts/PostItem';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
+import { GET_PROFILE } from '../../actions/types';
 
 
 const Posts = ({getPosts, posts:{posts,loading}})=>{
@@ -12,6 +13,7 @@ const Posts = ({getPosts, posts:{posts,loading}})=>{
     useEffect(()=>{
 
         getPosts();
+        
     },[getPosts])
 
 
@@ -25,7 +27,10 @@ const Posts = ({getPosts, posts:{posts,loading}})=>{
        <div className="posts">
            {posts.map((post)=>(
 
-               <PostItem key ={post._id} value ={post}/>
+
+            //prop name must match name of prop to destructure in the post item component
+    
+               <PostItem key ={post._id} post ={post}/>
 
            ))}
        </div>
@@ -38,13 +43,15 @@ Posts.propTypes = {
 
     getPosts: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired,
+   
+
 
 }
 
 const mapStateToProps = (state)=>({
 
-    posts: state.postReducer
-
-})
+    posts: state.postReducer,
+   
+});
 
 export default connect(mapStateToProps,{getPosts}) (Posts)
