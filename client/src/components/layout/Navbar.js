@@ -106,7 +106,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 <li>
         <Link
           to="/profiles"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="View Memebers"
         >
@@ -114,21 +114,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Members
         </Link>
       </li>
-<li>
-        <Link
-          to="/posts"
-          className="tooltipped"
-          data-position="bottom"
-          data-tooltip="View Memebers"
-        >
-           <i className="material-icons left landing-btn">people</i>
-          Posts
-        </Link>
-      </li>
+
       <li>
         <Link
           to="/login"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="Log in to your account"
         >
@@ -139,7 +129,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link
           to="/register"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="Create an account"
         >
@@ -159,7 +149,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 <li>
         <Link
           to="/profiles"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="View Memebers"
         >
@@ -167,10 +157,22 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Members
         </Link>
       </li>
+
+      <li>
+        <Link
+          to="/posts"
+          className="tooltipped sidenav-close"
+          data-position="bottom"
+          data-tooltip="View Memebers"
+        >
+           <i className="material-icons left landing-btn">people</i>
+          Posts
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="View Dashboard"
         >
@@ -183,7 +185,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           onClick={logout}
           href="#!"
           to="/enthusiasts"
-          className="tooltipped"
+          className="tooltipped sidenav-close"
           data-position="bottom"
           data-tooltip="Meet Manga Lovers"
         >
