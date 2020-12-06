@@ -73,9 +73,6 @@ nav {
   color: white;
 }
 
-.btn:hover {
-  opacity: 0.8;
-}
 
 /* Forms */
 /* label focus color */
@@ -127,9 +124,31 @@ nav {
 .btn-primary {
   background: coral;
 }
-.btn-primary:hover {
-  background: coral;
+
+
+.btn-blanched{
+
+  background:rgb(158, 124, 73);
 }
+.btn-blanched:hover{
+  opacity: 0.5;
+  background:rgb(158, 124, 73);
+}
+.btn-danger{
+
+  background: red;
+}
+
+.btn-danger:hover {
+  background: red;
+  opacity: 0.5;
+   
+ }
+/* .btn-primary:hover {
+  background: coral;
+} */
+
+
 
 .btn-primary i {
   color: black;
@@ -140,9 +159,14 @@ nav {
   border: 1px solid white;
 }
 
-.btn-dark:hover {
-  opacity: 0.8;
-  background: transparent;
+.btn-black{
+  background: black;
+}
+
+.btn-black:hover {
+ background: black;
+ opacity: 0.8;
+  
 }
 
 .text-primary {
@@ -270,6 +294,12 @@ nav {
   align-items: center;
 }
 
+.post button i{
+
+  color: black;
+  font-size: x-large;
+}
+
 /* Profile item styling */
 
 .flex-structure{
@@ -304,8 +334,8 @@ nav {
 .round-img{
 
   border-radius:50%;
-  width: 75px;
-  height:75px;
+  width: 100px;
+  height:100px;
 }
 .round-img-profile{
 
