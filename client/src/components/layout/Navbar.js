@@ -210,7 +210,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                   <i className="material-icons">menu</i>
                 </a>
                 <i className="large material-icons">tv</i>
-                <span className="text-primary">Anime</span>{" "}
+                <span className="anime-logo text-primary">Anime</span>{" "}
                 <span className="small">Enthusiasts</span>
               </Link>
             </div>
