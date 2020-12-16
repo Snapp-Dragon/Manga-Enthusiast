@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 import DashboardActions from "./DashboardActions";
 import Spinner from "../layout/Spinner";
+import Hobby from './Hobby';
+import Mangas from './Manga';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -24,11 +26,15 @@ const Dashboard = ({
       <p className="lead">
         <i className="small material-icons">person</i> Welcome{" "}
         {user && user.name}
+      
+       
       </p>
       {/* Check to see if the user has a profile */}
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          <Hobby hobbies={profile.profile.hobbies}/>
+          <Mangas mangas={profile.profile.mangas}/>
         </Fragment>
       ) : (
         <Fragment>
