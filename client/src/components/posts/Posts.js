@@ -2,9 +2,11 @@ import React,{Fragment,useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getPosts} from '../../actions/postActions';
 import PostItem from '../posts/PostItem';
+import PostForm from '../posts/PostForm';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 import { GET_PROFILE } from '../../actions/types';
+
 
 
 const Posts = ({getPosts, posts:{posts,loading}})=>{
@@ -23,6 +25,8 @@ const Posts = ({getPosts, posts:{posts,loading}})=>{
         <h1>Posts</h1>
        <p className="lead"> <i className="material-icons">group</i> Join The Fandom</p>
        {/* Post Form */}
+       <PostForm/>
+
 
        <div className="posts">
            {posts.map((post)=>(
