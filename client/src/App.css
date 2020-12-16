@@ -387,3 +387,31 @@ nav {
     font-size: 2rem;
   }
 }
+
+@media(min-width: 360px) and (max-width: 767px){
+
+
+    .hobbies{
+
+      margin-left: 2rem;;
+    }
+
+    .flex-structure{
+
+      margin:0;
+    }
+
+    .anime-logo{
+      
+     display: none;
+    }
+
+    .log-reg{
+
+      background: none;
+    }
+
+
+
+   
+}
