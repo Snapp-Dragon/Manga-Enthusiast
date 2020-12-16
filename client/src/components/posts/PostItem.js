@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import Moment from 'react-moment'
 import {connect} from 'react-redux'
-import {addLikes,removeLikes} from '../../actions/postActions';
+import {addLikes,removeLikes,deletePost} from '../../actions/postActions';
 
 
-const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,addLikes,removeLikes}) => {
+const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,showActions,addLikes,removeLikes,deletePost}) => {
     return (
         <div className="post bg-coral py-1 my-1">
         <div className = "post-image">
@@ -26,7 +26,12 @@ const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,
            <p className="post-date">
     Posted on <Moment format ="YYYY/MM/DD">{date}</Moment>
           </p>
-          <button onClick = {e => addLikes(_id)}type="button" className="btn btn-blanched">
+
+
+      {/* show buttons only if show actions is true */}
+          {showActions && <Fragment>
+            
+            <button onClick = {e => addLikes(_id)}type="button" className="btn btn-blanched">
             <i className="large material-icons">thumb_up</i>
     <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
@@ -37,9 +42,9 @@ const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,
     Discussion <span className='comment-count'>{comments.length}</span>
           </Link>
 
-          {/* Show loading button only if this is the users post */}
+          {/* Show delete button only if this is the users post */}
           {!auth.loading && user === auth.user._id &&(
-               <button      
+               <button onClick = { e => deletePost(_id)}   
                type="button"
                className="btn btn-danger"
              >
@@ -48,17 +53,30 @@ const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,
 
 
           )}
+            
+            
+            </Fragment>}
+          
          
         </div>
       </div>
     )
 }
 
+PostItem.defaultProps = {
+
+  showActions: true
+}
+
 PostItem.propTypes = {
 
     auth: PropTypes.object.isRequired,
     post: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    addLikes: PropTypes.func.isRequired,
+    removeLikes: PropTypes.func.isRequired,
+    deletePost: PropTypes.func.isRequired,
+
 }
 
 const mapStateToProps = state=>({
@@ -67,4 +85,4 @@ const mapStateToProps = state=>({
     auth:  state.authReducer
 })
 
-export default connect(mapStateToProps,{addLikes,removeLikes}) (PostItem)
+export default connect(mapStateToProps,{addLikes,removeLikes,deletePost}) (PostItem)
