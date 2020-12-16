@@ -54,7 +54,7 @@ const Register = ({ registerUser, isAuthenticated }) => {
         </p>
       </div>
       <div className="row">
-        <form className="col s6">
+        <form className="col s9">
           <div className="row">
             <div className="input-field col s12">
               <i className="material-icons prefix">account_circle</i>
