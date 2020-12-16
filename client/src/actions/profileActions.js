@@ -122,7 +122,7 @@ export const createProfile = (formData, history, edit = false) => async (
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
-      dispatch({ type: PROFILE_ERROR });
+      // dispatch({ type: PROFILE_ERROR });
       errors.forEach((error) => {
         M.toast({ html: `${error.msg}`, classes: "red" });
       });
