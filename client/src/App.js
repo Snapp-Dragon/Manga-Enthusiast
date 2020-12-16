@@ -9,6 +9,7 @@ import PrivateRoute from "../src/components/routing/PrivateRoute";
 import Profiles from "./components/profiles/Profiles";
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -62,6 +63,11 @@ const App = () => {
                 exact
                 path="/posts"
                 component={Posts}
+              />
+              <PrivateRoute
+                exact
+                path="/post/:id"
+                component={Post}
               />
             </Switch>
           </section>
