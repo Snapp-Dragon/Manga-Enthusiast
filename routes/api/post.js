@@ -171,7 +171,7 @@ router.put("/unlike/:id", auth, async (req, res) => {
       post.likes.filter((like) => like.user.toString() === req.user.id)
         .length === 0
     ) {
-      res.status(404).json({ msg: "This post has not been liked" });
+       res.status(404).json({ msg: "This post has not been liked" });
     }
 
     //get the index of the post

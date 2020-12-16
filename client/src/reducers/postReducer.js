@@ -1,4 +1,4 @@
-import {GET_POSTS,POST_ERROR,UPDATE_LIKES} from "../actions/types"
+import {GET_POSTS,GET_POST,POST_ERROR,UPDATE_LIKES,DELETE_POST,ADD_POST,ADD_COMMENT,REMOVE_COMMENT} from "../actions/types"
 
 
 //initial state of posts
@@ -31,6 +31,16 @@ export default function(state = initialState, action){
         };
 
 
+        case GET_POST:
+            
+        return {
+
+            ...state,
+            post: payload,
+            loading: false
+        }
+
+
         case UPDATE_LIKES:
 
             return{
@@ -40,10 +50,44 @@ export default function(state = initialState, action){
                 loading: false
 
             }
-        //create  update likes case
-            // 1. map through the posts
-            // 2. check to see if the post database id matches the payload id
-            // 3. if there is a match set the post likes to the payload likes otherwise return the posts
+            
+        case DELETE_POST:
+
+        return {
+
+            ...state,
+            posts: state.posts.filter((post)=> post._id !== payload),
+            loading: false
+        }
+
+
+
+        case ADD_COMMENT:
+
+            return{
+
+                ...state,
+                post: {...state.post, comments: payload},
+                loading: false
+            }
+
+
+        case REMOVE_COMMENT:{
+
+            return{
+
+                ...state,
+                post: {
+
+                    ...state.post,
+                    comments: state.post.comments.filter(comment=>comment._id !== payload)
+                },
+                loading: false
+               
+
+            }
+        }
+  
         
 
         case POST_ERROR:
@@ -53,6 +97,18 @@ export default function(state = initialState, action){
             ...state,
             erorr: payload,
             loading: false
+        }
+
+
+        case ADD_POST: {
+
+            return{
+
+                ...state,
+                // return to post a copy of the current array with payload added.
+                posts:  [payload, ...state.posts],
+                loading: false
+            }
         }
 
         default:
