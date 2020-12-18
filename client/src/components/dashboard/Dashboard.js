@@ -16,6 +16,7 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
+  
   return loading && profile === null ? (
     <Spinner />
   ) : (
@@ -33,8 +34,12 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+
           <Hobby hobbies={profile.profile.hobbies}/>
-          <Mangas mangas={profile.profile.mangas}/>
+          <Mangas mangas={profile.profile.mangas}/>  
+          <div>
+            
+          </div>
         </Fragment>
       ) : (
         <Fragment>
