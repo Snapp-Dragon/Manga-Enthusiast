@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
 import { connect } from "react-redux";
 //withRouter allows us to redirect from an action
-import { Link, withRouter } from "react-router-dom";
+import {  withRouter } from "react-router-dom";
 
 
 import PropTypes from "prop-types";
@@ -40,15 +40,15 @@ const EditProfile = ({
     getCurrentProfile();
 
     setFormData({
-      location: loading || !profile.profile.location ? "" : profile.profile.location,
-      hobbies: loading || !profile.profile.hobbies ? "" : profile.profile.hobbies,
-      mangas: loading || !profile.profile.mangas ? "" : profile.profile.mangas,
-      bio: loading || !profile.profile.bio ? "" : profile.profile.bio,
-      twitter: loading || !profile.profile.social ? "" : profile.profile.social.twitter,
-      facebook: loading || !profile.profile.social ? "" : profile.profile.social.facebook,
-      linkedin: loading || !profile.profile.social ? "" : profile.profile.social.linkedin,
-      youtube: loading || !profile.profile.social ? "" : profile.profile.social.youtube,
-      instagram: loading || !profile.profile.social ? "" : profile.profile.social.instagram,
+      location: loading || !profile.location ? "" : profile.location,
+      hobbies: loading || !profile.hobbies ? "" : profile.hobbies,
+      mangas: loading || !profile.mangas ? "" : profile.mangas,
+      bio: loading || !profile.bio ? "" : profile.bio,
+      twitter: loading || !profile.social ? "" : profile.social.twitter,
+      facebook: loading || !profile.social ? "" : profile.social.facebook,
+      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+      youtube: loading || !profile.social ? "" : profile.social.youtube,
+      instagram: loading || !profile.social ? "" : profile.social.instagram,
     });
   }, [getCurrentProfile, loading]);
 

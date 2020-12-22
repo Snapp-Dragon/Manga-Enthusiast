@@ -4,7 +4,7 @@ import {
   CLEAR_PROFILE,
   PROFILE_ERROR,
 } from "../actions/types";
-import M from "materialize-css/dist/js/materialize.min.js";
+
 
 //STATE
 const initialState = {

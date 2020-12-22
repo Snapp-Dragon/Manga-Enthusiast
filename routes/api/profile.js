@@ -9,7 +9,7 @@ const { check, validationResult } = require("express-validator");
 
 //@ Route - Get api/profile/me
 //@ Desc  - get current users profile
-//@ Access Privale
+//@ Access Private
 router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
@@ -22,7 +22,7 @@ router.get("/me", auth, async (req, res) => {
       return res.status(404).json({ msg: "profile was not found" });
     }
 
-    res.json({ profile });
+    res.json(profile);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("server error");
@@ -51,7 +51,7 @@ router.post(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      res.status(400).json({ errors: errors.array() });
+     return res.status(400).json({ errors: errors.array() });
     }
 
     //else pull everything from the profile form
@@ -67,6 +67,8 @@ router.post(
       instagram,
     } = req.body;
 
+  
+
     //build the profile object
 
     const profileFields = {};
@@ -75,14 +77,19 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (location) profileFields.location = location;
     if (hobbies) {
-      profileFields.hobbies = hobbies.split(",").map((hobby) => hobby.trim());
+
+      let stringHobbies = hobbies.toString();
+      
+      profileFields.hobbies = stringHobbies.split(",").map((hobby) => hobby.trim());
     }
     if (mangas) {
+
+      let stringMangas = mangas.toString();
       /*
         split method splits the string into substrings based on the commas'
         trim method removes all of the white spaces
       */
-      profileFields.mangas = mangas.split(",").map((manga) => manga.trim());
+      profileFields.mangas = stringMangas.split(",").map((manga) => manga.trim());
     }
 
     console.log(profileFields);
@@ -106,6 +113,8 @@ router.post(
           { new: true }
         );
 
+
+        console.log("This is profile social: " + profile.social);
         return res.json(profile);
       }
       // if there is no profile create one
@@ -115,7 +124,7 @@ router.post(
       //save profile to database
       await profile.save();
 
-      res.json(profile);
+       res.json(profile);
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Server Error");
