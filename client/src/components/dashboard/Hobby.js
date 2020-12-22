@@ -4,32 +4,35 @@ import PropTypes from 'prop-types'
 
 const Hobby = ({hobbies}) => {
 
+  const hobby = hobbies.slice(0,4).map((hobby,index) =>(
+
+    <tr key ={index}>{hobby}</tr>
+  ))
+
     return(
 
-      <div>
+      <Fragment>
         <table className = "striped">
         <thead>
           <tr>
-              <h3><th>Hobbies</th></h3>
+              <th className = "lead">Hobbies</th>
               
           </tr>
         </thead>
 
         <tbody>
-        {hobbies.slice(0,4).map((hobbie, index)=>(
-
-<tr key={index}>{hobbie}</tr>
-))}
+          {hobby}
         </tbody>
       </table>
             
-      </div>
+      </Fragment>
     )
 
 }
 
 Hobby.propTypes = {
 
+    hobbies: PropTypes.array.isRequired,
 }
 
 
