@@ -19,7 +19,7 @@ const Profile = ({auth, getProfileById,match, profile:{loading, profile}})=>{
 
 
 
-    },[getProfileById]);
+    },[getProfileById,match.params.id]);
 
 
     return(
