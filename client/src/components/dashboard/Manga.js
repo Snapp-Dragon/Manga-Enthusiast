@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -10,7 +10,7 @@ const Manga = ({mangas}) => {
         <table className = "striped">
         <thead>
           <tr>
-              <h3><th>Mangas</th></h3>
+              <th className= "lead">Mangas</th>
               
           </tr>
         </thead>
@@ -29,6 +29,8 @@ const Manga = ({mangas}) => {
 }
 
 Manga.propTypes = {
+
+    mangas: PropTypes.array.isRequired,
 
 }
 
