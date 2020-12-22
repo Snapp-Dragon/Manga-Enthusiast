@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createProfile } from "../../actions/profileActions";
 import { connect } from "react-redux";
 //withRouter allows us to redirect from an action
-import { Link, withRouter } from "react-router-dom";
+import {  withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
