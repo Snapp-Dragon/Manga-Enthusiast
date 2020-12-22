@@ -45,6 +45,8 @@ ul li a {
 body {
   background: black;
   color: white;
+  font-size: large;
+  font-family: cursive;
 }
 
 .landing::before {
@@ -175,6 +177,10 @@ nav {
 
 .text-secondary {
   color: red;
+}
+
+.text-white{
+  color:white;
 }
 
 .post-image{
