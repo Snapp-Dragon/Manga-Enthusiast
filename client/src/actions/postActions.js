@@ -151,7 +151,7 @@ export const deletePost = (id)=> async (dispatch)=>{
 
     try {
 
-        const res = await axios.delete(`/api/post/${id}`);
+         await axios.delete(`/api/post/${id}`);
 
         dispatch({
 
