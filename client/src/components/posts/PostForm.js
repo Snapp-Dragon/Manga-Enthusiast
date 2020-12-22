@@ -28,7 +28,7 @@ const PostForm = ({addPost})=>{
           <label for="textarea1">Make A POST</label>
         </div>
       </div>
-      <input type="submit" class ="" value="Submit"/>
+      <input type="submit" className ="btn-primary btn" value="Submit"/>
 
     </form>
   </div>
