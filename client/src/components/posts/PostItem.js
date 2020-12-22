@@ -16,7 +16,7 @@ const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,
               src={avatar}
               alt=""
             />
-            <h4>{name}</h4>
+            <h4><span className="text-white">{name}</span></h4>
           </Link>
         </div>
         <div>
@@ -29,6 +29,7 @@ const PostItem = ({auth, post:{_id,text,name,avatar,user,likes,comments,date } ,
 
 
       {/* show buttons only if show actions is true */}
+    {/* change to flexbox */}
           {showActions && <Fragment>
             
             <button onClick = {e => addLikes(_id)}type="button" className="btn btn-blanched">
