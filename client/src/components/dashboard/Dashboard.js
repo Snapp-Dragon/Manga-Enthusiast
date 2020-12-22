@@ -7,6 +7,7 @@ import DashboardActions from "./DashboardActions";
 import Spinner from "../layout/Spinner";
 import Hobby from './Hobby';
 import Mangas from './Manga';
+import Social from './Social';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -35,8 +36,11 @@ const Dashboard = ({
         <Fragment>
           <DashboardActions />
 
-          <Hobby hobbies={profile.profile.hobbies}/>
-          <Mangas mangas={profile.profile.mangas}/>  
+          <Hobby hobbies={profile.hobbies}/>
+          <Mangas mangas={profile.mangas}/>  
+
+          {/* add send social object if there is no social object send an empty object */}
+          <Social social={profile.social || {}}/>
           <div>
             
           </div>
