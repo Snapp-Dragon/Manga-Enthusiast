@@ -5,18 +5,18 @@ import PostItem from '../posts/PostItem';
 import PostForm from '../posts/PostForm';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
-import { GET_PROFILE } from '../../actions/types';
 
 
 
-const Posts = ({getPosts, posts:{posts,loading}})=>{
+
+const Posts = ({getPosts, posts:{posts,loading},match})=>{
 
 
     useEffect(()=>{
 
         getPosts();
         
-    },[getPosts])
+    },[getPosts,match.params.id])
 
 
     return(
