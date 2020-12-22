@@ -10,8 +10,10 @@ import axios from "axios";
 
 //@ Action - Get Current users profile
 export const getCurrentProfile = () => async (dispatch) => {
+
   try {
     const res = await axios.get("/api/profile/me");
+
 
     dispatch({ type: GET_PROFILE, payload: res.data });
   } catch (error) {
@@ -98,6 +100,8 @@ export const getProfileById = userId => async dispatch =>{
 export const createProfile = (formData, history, edit = false) => async (
   dispatch
 ) => {
+
+
   try {
     //create config object to send data
 
@@ -121,6 +125,7 @@ export const createProfile = (formData, history, edit = false) => async (
     }
   } catch (error) {
     const errors = error.response.data.errors;
+    console.log("res" + error);
     if (errors) {
       // dispatch({ type: PROFILE_ERROR });
       errors.forEach((error) => {
@@ -134,7 +139,7 @@ export const createProfile = (formData, history, edit = false) => async (
         msg: error.response.statusText,
 
         // http status
-        status: error.response.staus,
+        status: error.response.status,
       },
     });
   }
